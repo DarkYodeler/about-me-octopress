@@ -7,13 +7,6 @@ body {
   background-color: $base03;
 }
 
-header {
-  h1 {
-    color: #B58900;
-    margin-left: 60px;
-  }
-}
-
 ::-moz-selection { background: $magenta; text-shadow: none; }
 ::selection { background: $magenta; text-shadow: none; }
 
@@ -21,7 +14,7 @@ header {
 
   color: $green;
   font-size: 14px;
-  padding-left: 25px;
+  //padding-left: 25px;
 
   a, & a:visited, & a:hover {
     text-decoration: none;
@@ -74,7 +67,7 @@ header {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
-  font: 16px 'Inconsolata';
+  font: 16px Source Code Pro', sans-serif';
 
   #post & {
     margin-top: 30px;
@@ -94,6 +87,7 @@ header {
 }
 
 header {
+
   a {
 
     text-decoration: none;
@@ -108,13 +102,18 @@ header {
     &:visited {
       color: $blue;
     }
-      color: $blue;
+  }
+
+  h1 {
+    color: #B58900;
   }
 
   h2 {
     font-size: 14px;
     color: $orange;
+    margin-top: -15px;
   }
+
 }
 
 article {
@@ -182,6 +181,9 @@ article {
 }
 
 #main nav[role=pagination] {
+  
+  margin-top: 30px;
+
   a {
     margin-right: 15px;
     background-color: $magenta;
@@ -192,6 +194,26 @@ article {
       color: #fff;
     }
   }
+}
+
+footer {
+  color: $base01;
+  font-size: 12px;
+  margin: 40px 0;
+  
+  a {
+    text-decoration: none;
+    color: $base0;
+
+    &:visited {
+      color: $base0;
+    }
+
+    &:hover {
+      color: $base2;
+    }
+  }
+
 }
 
 .sharing {

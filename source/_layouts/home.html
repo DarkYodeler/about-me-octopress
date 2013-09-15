@@ -3,15 +3,16 @@
 
   <div id="container">
     <header>
-    <img src="{{ site.url}}/images/header.png" alt="Ivan Jovanovic in search for the next abstraction" />
-    <h1>in search for the next abstraction</h1>
+    <!-- <img src="{{ site.url}}/images/header.png" alt="Ivan Jovanovic in search for the next abstraction" /> -->
+      <h1><a href="{{ root_url }}">{{ site.title }}</a></h1>
+      {% if site.subtitle %}
+        <h2>{{ site.subtitle }}</h2>
+      {% endif %}
     </header>
     <div id="main" role="main">
       {{ content | expand_urls: root_url }}
     </div>
-    <footer>
-
-    </footer>
+    {% include footer.html %}
   </div> <!--! end of #container -->
 
   {% include bottom_scripts.html %}
