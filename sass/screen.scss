@@ -2,9 +2,18 @@
 @import "colors";
 @import "typography";
 @import "code";
+@import "background";
+
+html {
+  background: url($bkg_img) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 body {
-  background-color: $base03;
+  //background-color: $base03;
 }
 
 ::-moz-selection { background: $magenta; text-shadow: none; }
@@ -26,6 +35,10 @@ body {
 
     font-size: 30px;
     color: $yellow;
+  }
+  
+  h2 {
+    color: $solar-magenta;
   }
 
   h3 {
@@ -62,6 +75,22 @@ body {
 
 }
 
+#main nav[role=pagination] {
+  
+  margin-top: 30px;
+
+  a {
+    margin-right: 15px;
+    background-color: $solar-magenta;
+    padding: 3px;
+
+    &, &:visited, &:hover {
+      text-decoration: none;
+      color: $base2;
+    }
+  }
+}
+
 #container {
   margin-top: 70px;
   width: 700px;
@@ -88,19 +117,33 @@ body {
 
 header {
 
-  a {
+  #name a {
+    background-color: $solar-green;
+    font-size: 3em;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  
+  #pagelink {
+    font-size: 1.5em;
+    color: $solar-orange;
+    &:visited {
+      color: $solar-orange;
+    }
+  }
 
+  a {
+    font-size: 1em;
     text-decoration: none;
-    color: $blue;
-    font-size: 36px;
+    color: $base2;
 
     #post & {
-      font-size: 20px;
+      font-size: 1.2em;
       margin-bottom: 30px;
     }
 
     &:visited {
-      color: $blue;
+      color: $base2;
     }
   }
 
@@ -113,7 +156,6 @@ header {
     color: $orange;
     margin-top: -15px;
   }
-
 }
 
 article {
@@ -127,8 +169,9 @@ article {
 
   a, & a:visited, & a:hover {
     text-decoration: none;
-    color: $blue;
+    
   }
+
 
   h1, & h2, & h3 {
     color: $yellow;
@@ -170,47 +213,39 @@ article {
     p {
       margin: 0px;
     }
+    
+    a, & a:visited, & a:hover {
+      color: $base03;
+    }
+    
   }
+
   .article-read-more time {
     display: block;
     float: left;
     width: 100px;
     text-align: right;
     margin-right: 10px;
+    color: $base2;
   }
-}
 
-#main nav[role=pagination] {
-  
-  margin-top: 30px;
-
-  a {
-    margin-right: 15px;
-    background-color: $magenta;
-    padding: 3px;
-
-    &, &:visited, &:hover {
-      text-decoration: none;
-      color: #fff;
-    }
-  }
 }
 
 footer {
   color: $base01;
   font-size: 12px;
-  margin: 40px 0;
+  margin: 40px 0 0 0;
   
   a {
     text-decoration: none;
-    color: $base0;
+    color: $solar-orange;
 
     &:visited {
-      color: $base0;
+      color: $solar-orange;
     }
 
     &:hover {
-      color: $base2;
+      color: $solar-orange;
     }
   }
 
@@ -218,4 +253,25 @@ footer {
 
 .sharing {
   margin-top: 20px;
+}
+
+#links {
+  // position: absolute;
+  // bottom: 0;
+  padding-top: 10px;
+  //height: 74px;
+  width: 300px;
+  //background-color: RGBA(4,43,54,0.2);
+}
+
+#soclist {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  //margin: 0 auto;
+  //width: 960px;
+
+  li {
+    display: inline;
+  }
 }
