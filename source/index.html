@@ -10,6 +10,7 @@ layout: home
     </article>
   {% endfor %}
 </div>
+{% if paginator.total_pages > 1 %}
 <nav role="pagination">
   <div>
     {% if paginator.next_page_path %}
@@ -21,4 +22,5 @@ layout: home
     {% endif %}
   </div>
 </nav>
+{% endif %}
 {% include about_me.html %}
