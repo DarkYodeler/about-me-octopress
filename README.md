@@ -1,5 +1,14 @@
 A minimalist mono-spaced Octopress theme based on [`ji-octopress-theme`](https://github.com/ivanjovanovic/ji-octopress-theme). 
 
+This theme is a work in progress.
+
+## Future Work
+
+* Recent Twitter Post
+* Recent Pins from Pinterest
+* Mobile Layout
+* Update post css and layout
+
 ## _config.yml
 
 In your Octopress `_config.yml`, add the following section after your `3rd Party Settings`:
