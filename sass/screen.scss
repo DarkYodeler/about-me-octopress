@@ -275,3 +275,22 @@ footer {
     display: inline;
   }
 }
+
+#music {
+  background-color: $solar-magenta;
+  color: $base2;
+  margin-top: 5px;
+
+  a {
+    text-decoration: none;
+    color: $base03;
+
+    &:visited {
+      color: $base03;
+    }
+
+    &:hover {
+      color: $base03;
+    }
+  }
+}

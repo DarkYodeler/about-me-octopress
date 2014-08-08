@@ -1,0 +1,28 @@
+<div id="music"></div>
+<script>
+	var username = "{{ site.lastfm_user }}";
+	var API_KEY = "{{ site.lastfm_api_key}}";
+
+	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user="+username+
+              "&limit=1"+
+              "&api_key="+API_KEY+
+              "&format=json", 
+              function(data){
+              	  if (data.recenttracks.track.length > 1) {
+              	  	window.console.log(data.recenttracks.track[0]);
+              	  	var artist = data.recenttracks.track[0].artist['#text'];
+              	  	var track = data.recenttracks.track[0].name;
+              	  	var album = data.recenttracks.track[0].album['#text'];
+              	  	var track_url = data.recenttracks.track[0].url;
+              	  	
+              	  	var nowplaying = " - Listening to <a href='"+track_url+"'>" + track + "</a> "+
+              	  	"from " + album + " by " + artist + ".";
+
+              	  	$('#music').html(nowplaying);
+              	  } else {
+              	  	window.console.log("Not playing");
+              	  }
+		      });
+
+
+</script>

@@ -1,6 +1,47 @@
 <footer>
 	<p>
-	  Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - <a href="{{root_url}}/atom.xml">RSS Feed</a> - 
+	  <span id="music"></span></br>
+	  Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - 
+	  <a href="{{root_url}}/atom.xml">RSS Feed</a> - 
 	  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 	</p>
+
 </footer>
+
+<script type="text/javascript">
+	var username = "{{ site.lastfm_user }}";
+	var API_KEY = "{{ site.lastfm_api_key}}";
+	var author = "{{site.author}}"
+	author = author.split(' ');
+
+	$(document).ready(function(){
+	       GetMusic();
+	});
+
+	function GetMusic() {
+	       $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user="+username+
+	       "&limit=1"+
+	       "&api_key="+API_KEY+
+	       "&format=json", 
+	       function(data){
+	                if (data.recenttracks.track.length > 1) {
+	                     window.console.log(data.recenttracks.track[0]);
+	                     var artist = data.recenttracks.track[0].artist['#text'];
+	                     var track = data.recenttracks.track[0].name;
+	                     var album = data.recenttracks.track[0].album['#text'];
+	                     var track_url = data.recenttracks.track[0].url;
+	                     
+	                     var nowplaying = author[0] + " is listening to <a href='"+track_url+"'>" + track + "</a> "+
+	                     "from " + album + " by " + artist + ".";
+
+	                     $('#music').html(nowplaying);
+	                } else {
+	                     window.console.log("Not playing");
+	                }
+	             });
+
+	       setTimeout(GetMusic, 180*1000);
+	}
+
+
+</script>
