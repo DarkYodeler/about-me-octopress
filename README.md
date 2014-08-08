@@ -17,7 +17,6 @@ pinterest_board: <ENTER YOUR PINTEREST BOARD>
 lastfm_user: <ENTER YOUR LAST_FM USERNAME>
 lastfm_api_key: <ENTER YOUR LAST_FM API_KEY>
 
-
 # Job
 job: <ENTER YOUR WORKPLACE>
 joburl: <ENTER YOUR COMPANY'S URL>
