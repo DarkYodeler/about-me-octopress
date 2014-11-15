@@ -9,7 +9,7 @@
   <h1 class="article-title">{{ page.title | titlecase }}<small>{% include post/date.html %}{{ time }}</small></h1>
   <div class="article-content">{{ content }}</div>
   {% include post/sharing.html %}
-  <a href="{{root_url}}/">Return Home</a>
+  <a id="return" href="{{root_url}}/">&larr; Return Home</a>
   {% if site.disqus_short_name and page.comments != false %}
     <section>
       <h1>Comments</h1>
