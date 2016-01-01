@@ -6,7 +6,8 @@
     </p>
   </div>
 {% else %}
-  <h1 class="article-title">{{ page.title | titlecase }}<small>{% include post/date.html %}{{ time }}</small></h1>
+  <h1 class="article-title">{{ page.title | titlecase }}</h1>
+  <h3>{% include post/date.html %}{{ time }}</h3>
   <div class="article-content">{{ content }}</div>
   {% include post/sharing.html %}
   <a id="return" href="{{root_url}}/">&larr; Return Home</a>
